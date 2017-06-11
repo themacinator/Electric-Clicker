@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+
+<!-- Created by The Macinator (Mac Graham) in 2017. Ver 0.2. Big thanks to aldo111(Github) for the library (incremental0-game-js).!-->
+
+<html>
+
+	<head>
+	
+		<title>Electric Clicker</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/incrementalObject.js"></script>
+		<script>
+			
+			var game;
+			
+			var firstOptions={type:"Wind Up Generator", perSecondModifier:2, cost:10};
+			var secondOptions={type:"Small Solar Panel", perSecondModifier: 4, cost:20};
+			var thirdOptions={type:"Large Solar Panel",perSecondModifier: 8, cost:40};
+			var fourthOptions={type:"Small Wind Turbine",perSecondModifier: 16, cost:80};
+			var fifthOptions={type:"Large Wind Turbine",perSecondModifier: 32, cost:160};
+			var sixthOptions={type:"Small Gas Burner",perSecondModifier: 64, cost:320};
+			var seventhOptions={type:"Large Gas Burner",perSecondModifier: 128, cost:640};
+			var eighthOptions={type:"Small Fuel Cell",perSecondModifier: 256, cost:1280};
+			var ninthOptions={type:"Large Fuel Cell",perSecondModifier: 512, cost:2560};
+			var tenthOptions={type:"Small Coal Fire",perSecondModifier: 1024, cost:5120};
+			var shitOptions={type:"shit",perSecondModifier: 1, cost:5120};
+
+			
+			
+			
+			function buyHouse(housey) {
+				var house=game.getSet("HOUSES").getEntity(housey).attributes; //multiple ways of writing this: game.getSet("HOUSES").getEntities()[housey].attributes; || game.sets.HOUSES.getEntities()[housey].attributes || game.
+			
+				if (house.cost <= game.getScore())
+				{
+					
+					game.addToScore(-house.cost);//subtract house cost from the score variable
+					game.addToPointsPerSecond(house.perSecondModifier);
+					game.addToPointsPerClick(house.perSecondModifier/2);
+					
+					//modify the cost of this house so that it's more expensive to buy
+					house.cost+=Math.ceil(house.cost/2);	//not we can also do setAttribute	
+					
+					
+					var countVariableName="count_"+housey;
+					game.setAttribute(countVariableName,game.getAttribute(countVariableName)+1);
+					
+					
+					//game.setAttribute("count
+				}
+				
+			};
+			
+			var last_update=Date.now();
+
+			function init() {
+			
+				game=new Game(30);//30 fps game
+				game.init();//binds a clicker element -> useful for games where single-variable clicker games like cookie clicker
+				game.addToScore(0);//initialize score to 500
+				game.addToPointsPerClick(1);//initialize points received per click to 10
+				
+				game.addSet("HOUSES");//create a game set that stores all the Houses the player can buy
+
+				//add attributes and track the count of each
+				game.addAttribute("count_WindUpGenerator",0,"#count_WindUpGenerator");//don't use spaces for the id element
+				game.addAttribute("count_SmallSolarPanel",0,"#count_SmallSolarPanel");
+				game.addAttribute("count_LargeSolarPanel",0,"#count_LargeSolarPanel");
+				game.addAttribute("count_SmallWindTurbine",0,"#count_SmallWindTurbine");
+				game.addAttribute("count_LargeWindTurbine",0,"#count_LargeWindTurbine");
+				game.addAttribute("count_SmallGasBurner",0,"#count_SmallGasBurner");
+				game.addAttribute("count_LargeGasBurner",0,"#count_LargeGasBurner");
+				game.addAttribute("count_SmallFuelCell",0,"#count_SmallFuelCell");
+				game.addAttribute("count_LargeFuelCell",0,"#count_LargeFuelCell");
+				game.addAttribute("count_SmallCoalFire",0,"#count_SmallCoalFire");
+				game.addAttribute("count_Castle",0,"#count_Castle");
+
+
+				
+				//add the houses into the HOUSES entity set
+				game.sets.HOUSES.addEntity("Wind Up Generator",firstOptions).track("cost","#house_cost_0");
+				game.sets.HOUSES.addEntity("Small Solar Panel",secondOptions).track("cost","#house_cost_1");
+				game.sets.HOUSES.addEntity("Large Solar Panel", thirdOptions).track("cost","#house_cost_2");
+				game.sets.HOUSES.addEntity("Small Wind Turbine", fourthOptions).track("cost","#house_cost_3");
+				game.sets.HOUSES.addEntity("Large Wind Turbine", fifthOptions).track("cost","#house_cost_3");
+				game.sets.HOUSES.addEntity("Small Gas Burner", sixthOptions).track("cost","#house_cost_4");
+				game.sets.HOUSES.addEntity("Large Gas Burner", seventhOptions).track("cost","#house_cost_5");
+				game.sets.HOUSES.addEntity("Small Fuel Cell", eighthOptions).track("cost","#house_cost_6");
+				game.sets.HOUSES.addEntity("Large Fuel Cell", ninthOptions).track("cost","#house_cost_7");
+				game.sets.HOUSES.addEntity("Small Coal Fire", tenthOptions).track("cost","#house_cost_8");
+				
+				
+				//game.getSet("HOUSES").getEntity("Old House").untrack("cost");// --> will stop tracking the cost in real-time.. uncomment to see how!
+				
+				//now let's add this list into our html
+				
+				houses_list=game.sets.HOUSES.getEntities();//obtain the set of houses
+				var x=0;
+				for (i in houses_list) 
+				{	
+					$("#available_houses").append("<div class='house' id='"+x+"_house'><b>"+houses_list[i].getName()+"</b><br>Cost: <b id='house_cost_"+x+"'>"+houses_list[i].attributes.cost+"</b><br></b><hr>");
+					game.addClicker("#"+x+"_house",buyHouse,i);
+			
+					
+					x++;
+				
+				}
+				
+				//game.removeClicker("#0_house"); //works! 
+
+				game.play(incrementalGame);
+				
+				//play();
+			};
+			
+			
+			
+			function incrementalGame() {
+			//this function contains our main game loop code
+				
+				
+				
+				//our game code
+				
+				//display stuff
+				$("#money_value").html(game.getScore());
+				$("#perSecond").html(game.getPointsPerSecond());
+				$("#perClick").html(game.getPointsPerClick());
+				
+				
+				
+				//do stuff
+				game.increaseScorePerSecond();//this increases the score per second 
+											  //using game's internal 'score' variable
+				/*for (i in Tracks)
+				{
+				
+					$(Tracks[i].element).html(Tracks[i].container[Tracks[i].name]);
+					
+				
+				}*/ 
+				
+				//tracks are automatically maintained in game.play();
+				
+				last_update=Date.now();
+				
+				
+				
+			
+			}
+			
+			var ag=new Game();
+			
+			
+			
+			$(document).ready(function() {
+			
+				init(); //run initialization code
+			
+			});
+			
+			
+		
+		
+		</script>
+		
+	
+		
+	</head>
+	
+	
+	
+	<body style="font-family:default;user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none; cursor: default;">
+		
+		<header title="You Don't Get any Watts For Clicking This" ><u>
+		Electric Clicker</u>
+		</header>
+		<div style="cursor:pointer;max-width:200px;max-height: 320px;overflow:auto;border:1px solid black" id="available_houses">
+		</div><br>
+		<div style="border: 1px solid Black; max-width:200px"id="money">
+		<b>Watts</b>: <span id="money_value"></span><br>
+		
+		
+		Watts/Per Second: <span id="perSecond"></span><br>
+		Watts/Per Click: <span id="perClick"></span>
+		</div><br>
+		<div onclick="game.addClickerText('+1')" style="text-align:centre;max-width:200px;color:white;background-color:black;cursor:pointer ; user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;" id="clicker">
+		Create Watt
+		</div>
+		<br>
+		<div style="float:left;max-width:200px;" id="credits">
+		Mac Graham - <a style="color:grey" href="http://www.github.com/themacinator">Github</a> - <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
+		</div>
+		
+	</body>
+	
+
+</html>
