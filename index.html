@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 
 
-<!-- Created by The Macinator (Mac Graham) in 2017. Ver 0.2. Big thanks to aldo111(Github) for the library (incremental0-game-js).!-->
+<!-- Created by The Macinator (Mac Graham) in 2017. Ver 0.2. Big thanks to aldo111(Github) for the library (incremental0-game-js).Thanks to https://www.reddit.com/user/Illmatar for reporting and telling me how to fix a terrible! You will forever be remembered as the reddit user who saved Electric Clicker.            
+                      To add
+					  //////
+					  - 30 more things to buy
+					  - info for each thing
+					  - achievements 
+					  -->
 
 <html>
 
 	<head>
 	
 		<title>Electric Clicker V0.5</title>
+		
+	
+		
 		<script src="js/jquery.js"></script>
 		<script src="js/incrementalObject.js"></script>
 		<script>
@@ -24,7 +33,7 @@
 			
 			var game;
 			
-			var firstOptions={type:"Wind Up Generator", perSecondModifier:2, cost:10};
+			var firstOptions={type:"Wind Up Generator", perSecondModifier:2,toolTip:12312344123 cost:10};
 			var secondOptions={type:"Small Solar Panel", perSecondModifier: 4, cost:20};
 			var thirdOptions={type:"Large Solar Panel",perSecondModifier: 8, cost:40};
 			var fourthOptions={type:"Small Wind Turbine",perSecondModifier: 16, cost:80};
@@ -34,7 +43,15 @@
 			var eighthOptions={type:"Small Fuel Cell",perSecondModifier: 256, cost:1280};
 			var ninthOptions={type:"Large Fuel Cell",perSecondModifier: 512, cost:2560};
 			var tenthOptions={type:"Small Coal Fire",perSecondModifier: 1024, cost:5120};
-			var shitOptions={type:"shit",perSecondModifier: 1, cost:5120};
+			var eleventhOptions={type:"Large Coal Fire",perSecondModifier: 2048, cost:10240};
+			var twelthOptions={type:"Small Hydroelectric Scheme",perSecondModifier: 4096, cost:20480};
+			var thirteenthOptions={type:"Large Hydroelectric Scheme",perSecondModifier: 8192, cost:40960};
+			var fourteenthOptions={type:"Small Biofuel Fire",perSecondModifier: 16384, cost:91920};
+			var fifthteenthOptions={type:"Large Biofuel Fire",perSecondModifier: 32786, cost:183840};
+			var sixteenthOptions={type:"Small Geothermal Plant",perSecondModifier: 65536, cost:367680};
+			var seventeenthOptions={type:"Large Geothermal Plant",perSecondModifier: 131072, cost:735360};
+			var eighteenthOptions={type:"Small Nuclear Reactor",perSecondModifier: 262144, cost:1470720};
+			var nineteenthOptions={type:"Large Nuclear Reactor",perSecondModifier: 1048576, cost:2941440};
 
 			
 			
@@ -84,23 +101,47 @@
 				game.addAttribute("count_SmallFuelCell",0,"#count_SmallFuelCell");
 				game.addAttribute("count_LargeFuelCell",0,"#count_LargeFuelCell");
 				game.addAttribute("count_SmallCoalFire",0,"#count_SmallCoalFire");
-				game.addAttribute("count_Castle",0,"#count_Castle");
+				game.addAttribute("count_LargeCoalFire",0,"#count_LargeCoalFire");
+				game.addAttribute("count_SmallHydroelectricScheme",0,"#count_SmallHydroelectric");
+				game.addAttribute("count_LargeHydroelectricScheme",0,"#count_LargeHydroelectric");
+				game.addAttribute("count_SmallBiofuelFire",0,"#count_SmallBiofuel");
+				game.addAttribute("count_LargeBiofuelFire",0,"#count_LargeBiofuel");
+				game.addAttribute("count_SmallGeothermalPlant",0,"#count_SmallGeothermal");
+				game.addAttribute("count_LargeGeothermalPlant",0,"#count_LargeGeothermal");
+				game.addAttribute("count_SmallNuclearReactor",0,"#count_SmallNuclear");
+				game.addAttribute("count_LargeNuclearReactor",0,"#count_LargeNuclear");
 
 
 				
 				//add the houses into the HOUSES entity set
-				game.sets.HOUSES.addEntity("Wind Up Generator",firstOptions).track("cost","#house_cost_1");
-				game.sets.HOUSES.addEntity("Small Solar Panel",secondOptions).track("cost","#house_cost_2");
-				game.sets.HOUSES.addEntity("Large Solar Panel", thirdOptions).track("cost","#house_cost_3");
-				game.sets.HOUSES.addEntity("Small Wind Turbine", fourthOptions).track("cost","#house_cost_4");
-				game.sets.HOUSES.addEntity("Large Wind Turbine", fifthOptions).track("cost","#house_cost_5");
-				game.sets.HOUSES.addEntity("Small Gas Burner", sixthOptions).track("cost","#house_cost_6");
-				game.sets.HOUSES.addEntity("Large Gas Burner", seventhOptions).track("cost","#house_cost_7");
-				game.sets.HOUSES.addEntity("Small Fuel Cell", eighthOptions).track("cost","#house_cost_8");
-				game.sets.HOUSES.addEntity("Large Fuel Cell", ninthOptions).track("cost","#house_cost_9");
-				game.sets.HOUSES.addEntity("Small Coal Fire", tenthOptions).track("cost","#house_cost_10");
+				game.sets.HOUSES.addEntity("Wind Up Generator",firstOptions).track("cost","#house_cost_0");
+				game.sets.HOUSES.addEntity("Small Solar Panel",secondOptions).track("cost","#house_cost_1");
+				game.sets.HOUSES.addEntity("Large Solar Panel", thirdOptions).track("cost","#house_cost_2");
+				game.sets.HOUSES.addEntity("Small Wind Turbine", fourthOptions).track("cost","#house_cost_3");
+				game.sets.HOUSES.addEntity("Large Wind Turbine", fifthOptions).track("cost","#house_cost_4");
+				game.sets.HOUSES.addEntity("Small Gas Burner", sixthOptions).track("cost","#house_cost_5");
+				game.sets.HOUSES.addEntity("Large Gas Burner", seventhOptions).track("cost","#house_cost_6");
+				game.sets.HOUSES.addEntity("Small Fuel Cell", eighthOptions).track("cost","#house_cost_7");
+				game.sets.HOUSES.addEntity("Large Fuel Cell", ninthOptions).track("cost","#house_cost_8");
+				game.sets.HOUSES.addEntity("Small Coal Fire", tenthOptions).track("cost","#house_cost_9");
+				game.sets.HOUSES.addEntity("Large Coal Fire", eleventhOptions).track("cost","#house_cost_10");
+				game.sets.HOUSES.addEntity("Small Hydroelectric Scheme", twelthOptions).track("cost","#house_cost_11");
+				game.sets.HOUSES.addEntity("Large Hydroelectric Scheme", thirteenthOptions).track("cost","#house_cost_12");
+				game.sets.HOUSES.addEntity("Small Biofuel Fire", fourteenthOptions).track("cost","#house_cost_13");
+				game.sets.HOUSES.addEntity("Large Biofuel Fire", fifthteenthOptions).track("cost","#house_cost_14");
+				game.sets.HOUSES.addEntity("Small Geothermal Plant", sixteenthOptions).track("cost","#house_cost_15");
+				game.sets.HOUSES.addEntity("Large Geothermal Plant", seventeenthOptions).track("cost","#house_cost_16");
+				game.sets.HOUSES.addEntity("Small Nuclear Reactor", eighteenthOptions).track("cost","#house_cost_17");
+				game.sets.HOUSES.addEntity("Large Nuclear Reactor", nineteenthOptions).track("cost","#house_cost_18");
+
 				
-				
+
+
+
+
+
+
+
 				//game.getSet("HOUSES").getEntity("Old House").untrack("cost");// --> will stop tracking the cost in real-time.. uncomment to see how!
 				
 				//now let's add this list into our html
@@ -118,8 +159,8 @@
 				}
 				
 				//game.removeClicker("#0_house"); //works! 
-
 				game.play(incrementalGame);
+
 				
 				//play();
 			};
@@ -187,10 +228,10 @@
         -webkit-user-select: none;
         -o-user-select: none; cursor: default;">
 		
-		<header title="You Don't Get any Watts For Clicking This" ><u>
+		<header title="You Don't Get any Joules For Clicking This" ><u>
 		Electric Clicker</u>
 		</header>
-		<div style="cursor:pointer;max-width:200px;max-height: 320px;overflow:auto;border:1px solid black" id="available_houses">
+		<div style="cursor:pointer;max-width:200px;max-height: 314px;overflow:auto;border:1px solid black" id="available_houses">
 		</div><br>
 		<div style="border: 1px solid Black; max-width:200px"id="money">
 		<b>Joules</b>: <span id="money_value"></span><br>
@@ -199,7 +240,7 @@
 		Joules/Per Second: <span id="perSecond"></span><br>
 		Joules/Per Click: <span id="perClick"></span>
 		</div><br>
-		<div onclick="game.addClickerText('+1')" style="text-align:centre;max-width:200px;color:white;background-color:black;cursor:pointer ; user-select: none;
+		<div onclick='game.addClickerText("+"+game.getPointsPerClick())' style="text-align:centre;max-width:200px;color:white;background-color:black;cursor:pointer ; user-select: none;
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
@@ -207,9 +248,13 @@
 		Generate Joule
 		</div>
 		<br>
+		<div style="cursor:pointer;color:red" onclick='location.reload(true)' id="reset">Reset (No Confirmation!)</div>
+		<br>
+		
 		<div style="float:left;max-width:200px;" id="credits">
 		Mac Graham - <a style="color:grey" href="http://www.github.com/themacinator">Github</a> - <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
 		</div>
+		<div id="times"></div>
 		
 	</body>
 	
