@@ -49,12 +49,11 @@
 			var seventeenthOptions={type:"LargeGeothermalPlant",perSecondModifier: 1840002953, cost:5000000000};
 			var eighteenthOptions={type:"SmallNuclearReactor",perSecondModifier: 7360011914, cost:20000000000};
 			var nineteenthOptions={type:"LargeNuclearReactor",perSecondModifier: 27600044677, cost:75000000000};
-			var twentiethOptions={type:"SmallElectricMatterExtractor",perSecondModifier: 110400178, cost:300000000000};
-			var twentyfirstOptions={type:"LargeElectricMatterExtractor",perSecondModifier: 364320589743, cost:1000000000000};
-			var twentysecondOptions={type:"SmallSolarFlareFarm",perSecondModifier: 1092961769229, cost:5000000000000};
-			var twentythirdOptions={type:"LargeSolarFlareFarm",perSecondModifier: 4371847076816, cost:20000000000000};
-			var twentyfourthOptions={type:"SmallStardustHarvester",perSecondModifier: 21859235384680, cost:1000000000000000};
-			var twentyfifthOptions={type:"LargeStardustHarvester",perSecondModifier: 109296176922900, cost:50000000000000000};
+			var twentiethOptions={type:"ElectricMatterExtractor",perSecondModifier: 110400178, cost:300000000000};
+			var twentyfirstOptions={type:"SmallSolarFlareFarm",perSecondModifier: 364320589743, cost:1000000000000};
+			var twentysecondOptions={type:"LargeSolarFlareFarm",perSecondModifier: 1092961769229, cost:5000000000000};
+			var twentythirdOptions={type:"SmallSolarFlareFarm",perSecondModifier: 4371847076816, cost:20000000000000};
+			var twentyfourthOptions={type:"LargeStardustHarvester",perSecondModifier: 21859235384680, cost:1000000000000000};
 
 			
 			
@@ -135,6 +134,11 @@
 				game.sets.HOUSES.addEntity("Large Geothermal Plant", seventeenthOptions).track("cost","#house_cost_16");
 				game.sets.HOUSES.addEntity("Small Nuclear Reactor", eighteenthOptions).track("cost","#house_cost_17");
 				game.sets.HOUSES.addEntity("Large Nuclear Reactor", nineteenthOptions).track("cost","#house_cost_18");
+				game.sets.HOUSES.addEntity("Electric Matter Extractor", twentiethOptions).track("cost","#house_cost_19");
+				game.sets.HOUSES.addEntity("Small Solar Flare Farm", twentyfirstOptions).track("cost","#house_cost_20");
+				game.sets.HOUSES.addEntity("Large Solar Flare Farm",twentysecondOptions).track("cost","#house_cost_21");
+				game.sets.HOUSES.addEntity("Small Stardust Harvester", twentythirdOptions).track("cost","#house_cost_22");
+				game.sets.HOUSES.addEntity("Large Stardust Harvester", twentyfourthOptions).track("cost","#house_cost_23");
 
 				
 
@@ -242,33 +246,33 @@
         -webkit-user-select: none;
         -o-user-select: none; cursor: default;">
 		
-		<header style="float:centre" title="You Don't Get any Joules For Clicking This" ><u>
-		Electric Clicker</u>
-		</header>
-		<div style="cursor:pointer;max-width:200px;max-height: 350px;overflow:auto;border:1px solid black" id="available_houses">
+		<h2 style="float:centre" title="You Don't Get any Joules For Clicking This" >
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electric Clicker</u>
+		</h2>
+		<div style="cursor:pointer;max-width:250px;max-height: 350px;overflow:auto;border:1px solid black" id="available_houses">
 		</div><br>
-		<div style="border: 1px solid Black; max-width:200px"id="money">
+		<div style="border: 1px solid Black; max-width:250px"id="money">
 		<b>Joules</b>: <span id="money_value"></span><br>
 		
 		
 		Joules/Per Second: <span id="perSecond"></span><br>
 		Joules/Per Click: <span id="perClick"></span>
 		</div><br>
-		<div onclick='game.addClickerText("+"+game.getPointsPerClick())' style="text-align:centre;max-width:200px;color:white;background-color:black;cursor:pointer ; user-select: none;
+		<div onclick='game.addClickerText("+"+game.getPointsPerClick())' style="text-align:centre;max-width:250px;color:white;background-color:black;cursor:pointer ; user-select: none;
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
         -o-user-select: none;" id="clicker">
-		Generate Joule
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Generate Joule
 		</div>
 		<br>
 		
 		
-		<div style="float:left;max-width:200px;" id="credits">
-		Incrementallydone &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
+		<div  style="border:1px solid Black;max-width:250px"id="credits">
+		Incrementallydone &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
 		<br>
 	
-		InvincibleSpeed &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/user/invinciblespeed">Reddit</a>
+		InvincibleSpeed &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/user/invinciblespeed">Reddit</a>
 		</div><br>
 		<br>
 		
