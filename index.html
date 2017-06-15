@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<!-- Created by The Macinator (Mac Graham) and https://www.reddit.com/user/invinciblespeed in 2017. Ver 0.3. Big thanks to aldo111(Github) for the library (incremental-game-js).Thanks to https://www.reddit.com/user/Illmatar for reporting and telling me how to fix a terrible! You will forever be remembered as the reddit user who saved Electric Clicker.            
+<!-- Created by The Macinator (Mac Graham) and https://www.reddit.com/user/invinciblespeed in 2017. Ver 0.4. Big thanks to aldo111(Github) for the library (incremental-game-js).Thanks to https://www.reddit.com/user/Illmatar for reporting and telling me how to fix a terrible! You will forever be remembered as the reddit user who saved Electric Clicker.            
                       To add
 					  //////
 					  - 30 more things to buy
@@ -13,7 +13,7 @@
 
 	<head>
 	
-		<title>Electric Clicker V0.3</title>
+		<title>Electric Clicker V0.4</title>
 		<script src="js/jquery.js"></script>
 		<script src="js/incrementalObject.js"></script>
 		<script>
@@ -54,6 +54,23 @@
 			var twentysecondOptions={type:"LargeSolarFlareFarm",perSecondModifier: 1092961769229, cost:5000000000000};
 			var twentythirdOptions={type:"SmallSolarFlareFarm",perSecondModifier: 4371847076816, cost:20000000000000};
 			var twentyfourthOptions={type:"LargeStardustHarvester",perSecondModifier: 21859235384680, cost:1000000000000000};
+			var twentyfifthOptions={type:"SmallElectroMoonHarvester",perSecondModifier: 65577706154040, cost:75000000000000000};
+			var twentysixthOptions={type:"LargeElectroMoonHarvester",perSecondModifier: 196733118462120, cost:200000000000000000};                                                                                                
+			var twentyseventhOptions={type:"SmallElectroPlanetHarvester",perSecondModifier: 590199355386360, cost:750000000000000000000};
+			var twentyeighthOptions={type:"LargeElectroPlanetHarvester",perSecondModifier: 1770598066159080, cost:2000000000000000000000};
+			var twentyninthOptions={type:"SmallSunHarvester",perSecondModifier: 5311794198477240, cost:10000000000000000000000};
+			var thirtiethOptions={type:"LargeSunHarvester",perSecondModifier: 15935382595431720, cost:50000000000000000000000};
+			var thirtyfirstOptions={type:"SmallSuperNovaCollector",perSecondModifier: 47806147786295160, cost:500000000000000000000000};
+			var thirtysecondOptions={type:"LargeSuperNovaCollector",perSecondModifier: 143418443358885480, cost:20000000000000000000000000};
+			var thirtythirdOptions={type:"SmallSolarWindTurbine",perSecondModifier: 430255330076656440, cost:90000000000000000000000000};
+			var thirtyfourthOptions={type:"LargeSolarWindTurbine",perSecondModifier: 1290765990229969320, cost:300000000000000000000000000};
+			var thirtyfifthOptions={type:"SmallGalaxyHarvester",perSecondModifier: 3872297970689907960, cost:10000000000000000000000000000};
+			var thirtysixthOptions={type:"LargeGalaxyHarvester",perSecondModifier: 11616893912069723880, cost:70000000000000000000000000000};
+			var thirtyseventhOptions={type:"SmallGalaxyCollider",perSecondModifier: 34850681736209171640, cost:200000000000000000000000000000};
+			var thirtyeighthOptions={type:"LargeGalaxyCollider",perSecondModifier: 104552045208627514920, cost:750000000000000000000000000000};
+			var thirtyninthOptions={type:"SmallProtonEventFarm",perSecondModifier: 313656135625882544760, cost:3000000000000000000000000000000};
+			var fortiethOptions={type:"LargeProtonEventFarm",perSecondModifier: 940968406877647634280, cost:10000000000000000000000000000000};
+			
 
 			
 			
@@ -139,6 +156,22 @@
 				game.sets.HOUSES.addEntity("Large Solar Flare Farm",twentysecondOptions).track("cost","#house_cost_21");
 				game.sets.HOUSES.addEntity("Small Stardust Harvester", twentythirdOptions).track("cost","#house_cost_22");
 				game.sets.HOUSES.addEntity("Large Stardust Harvester", twentyfourthOptions).track("cost","#house_cost_23");
+				game.sets.HOUSES.addEntity("Small Electro Moon Harvester", twentyfifthOptions).track("cost","#house_cost_24");
+				game.sets.HOUSES.addEntity("Large Electro Moon Harvester", twentysixthOptions).track("cost","#house_cost_25");
+				game.sets.HOUSES.addEntity("Small Electro Planet Harvester", twentyseventhOptions).track("cost","#house_cost_26");
+				game.sets.HOUSES.addEntity("Large Electro Planet Harvester", twentyeighthOptions).track("cost","#house_cost_27");
+				game.sets.HOUSES.addEntity("Small Sun Harvester", twentyninthOptions).track("cost","#house_cost_28");
+				game.sets.HOUSES.addEntity("Large Sun Harvester", thirtiethOptions).track("cost","#house_cost_29");
+				game.sets.HOUSES.addEntity("Small Supernova Collector", thirtyfirstOptions).track("cost","#house_cost_30");
+				game.sets.HOUSES.addEntity("Large Supernova Collector", thirtysecondOptions).track("cost","#house_cost_31");
+				game.sets.HOUSES.addEntity("Small Solar Wind Turbine", thirtythirdOptions).track("cost","#house_cost_32");
+				game.sets.HOUSES.addEntity("Large Solar Wind Turbine", thirtyfourthOptions).track("cost","#house_cost_33");
+				game.sets.HOUSES.addEntity("Small Galaxy Harvester", thirtyfifthOptions).track("cost","#house_cost_34");
+				game.sets.HOUSES.addEntity("Large Galaxy Harvester", thirtysixthOptions).track("cost","#house_cost_35");
+				game.sets.HOUSES.addEntity("Small Galaxy Collider", thirtyseventhOptions).track("cost","#house_cost_36");
+				game.sets.HOUSES.addEntity("Large Galaxy Collider", thirtyeighthOptions).track("cost","#house_cost_37");
+				game.sets.HOUSES.addEntity("Small Proton Event Farm", thirtyninthOptions).track("cost","#house_cost_38");
+				game.sets.HOUSES.addEntity("Large Proton Event Farm", fortiethOptions).track("cost","#house_cost_39");
 
 				
 
@@ -163,6 +196,8 @@
 					x++;
 				
 				}
+				
+				
 				
 				//game.removeClicker("#0_house"); //works! 
 				game.play(incrementalGame);
@@ -246,39 +281,41 @@
         -webkit-user-select: none;
         -o-user-select: none; cursor: default;">
 		
-		<h2 style="float:centre" title="You Don't Get any Joules For Clicking This" >
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electric Clicker</u>
-		</h2>
-		<div style="cursor:pointer;max-width:250px;max-height: 350px;overflow:auto;border:1px solid black" id="available_houses">
+		<header style="text-align:centre;max-width:300px" title="You Don't Get any Joules For Clicking This" >
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <u><b>Electric Clicker</b></u>
+		</header><br>
+		<div style="cursor:pointer;max-width:300px;max-height: 350px;overflow:auto;border:1px solid black" id="available_houses">
 		</div><br>
-		<div style="border: 1px solid Black; max-width:250px"id="money">
+		<div style="border: 1px solid Black; max-width:300px"id="money">
 		<b>Joules</b>: <span id="money_value"></span><br>
 		
 		
 		Joules/Per Second: <span id="perSecond"></span><br>
 		Joules/Per Click: <span id="perClick"></span>
 		</div><br>
-		<div onclick='game.addClickerText("+"+game.getPointsPerClick())' style="text-align:centre;max-width:250px;color:white;background-color:black;cursor:pointer ; user-select: none;
+		<div onclick='game.addClickerText("+"+game.getPointsPerClick())' style="text-align:centre;max-width:300px;color:white;background-color:black;cursor:pointer ; user-select: none;
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
         -o-user-select: none;" id="clicker">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Generate Joule
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Generate Joule
 		</div>
 		<br>
 		
 		
-		<div  style="border:1px solid Black;max-width:250px"id="credits">
-		Incrementallydone &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
+		<div  style="border:1px solid Black;max-width:300px"id="credits">
+		IncrementallyDone &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
 		<br>
 	
-		InvincibleSpeed &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/user/invinciblespeed">Reddit</a>
-		</div><br>
+		InvincibleSpeed &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/user/invinciblespeed">Reddit</a><br>
+		Tombrittain &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey"href="http://www.reddit.com/user/tombrittain:">Reddit</a>
+		</div>
 		<br>
 		
 		
-		<div id="comment"></div>
-		<div id="test" style="border:1px black;max-width: 198px;max-height: 20px>wow</div>
+		<br>
+		<br>
+		
 	
 	</body>
 	
