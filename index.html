@@ -4,12 +4,12 @@
 <!-- Created by The Macinator (Mac Graham) and https://www.reddit.com/user/invinciblespeed in 2017. Ver 0.4. Big thanks to aldo111(Github) for the library (incremental-game-js).Thanks to https://www.reddit.com/user/Illmatar for reporting and telling me how to fix a terrible! You will forever be remembered as the reddit user who saved Electric Clicker.            
                       To add
 					  //////
-					  - 30 more things to buy
-					  - info for each thing
-					  - achievements 
+					  - 30 more things to buy done
+					  - info for each thing done
+					  - achievements not done
 					  -->
 
-<html>
+<html style="text-align:centre">
 
 	<head>
 	        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -18,7 +18,8 @@
     google_ad_client: "ca-pub-4572907513763718",
     enable_page_level_ads: true
   });
-</script>
+
+ </script>
 		<title>Electric Clicker V0.4</title>
 		<script src="js/jquery.js"></script>
 		<script src="js/incrementalObject.js"></script>
@@ -275,6 +276,15 @@
 		
 		
 		</script>
+		<script>
+		$(document).ready(function() {
+        $(document).keyup(function(e) {
+          if (e.keyCode == '74') {
+            game.addToScore(1);
+          }
+        });
+      });
+</script>
 		
 		
 	</head>
@@ -286,20 +296,20 @@
         -khtml-user-select: none;
         -webkit-user-select: none;
         -o-user-select: none; cursor: default;">
-		
+		<div id='container' style='border: 3px double Black;max-width: 304px;max-height: 850px'
 		<header style="text-align:centre;max-width:300px" title="You Don't Get any Joules For Clicking This" >
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <u><b>Electric Clicker</b></u>
 		</header><br>
-		<div style="cursor:pointer;max-width:300px;max-height: 350px;overflow:auto;border:1px solid black" id="available_houses">
+		<div style="cursor:pointer;max-width:300px;max-height: 350px;overflow:auto;border:3px double Black;" id="available_houses">
 		</div><br>
-		<div style="border: 1px solid Black; max-width:300px"id="money">
-		<b>Joules</b>: <span id="money_value"></span><br>
+		<div style="border: 3px double Black; max-width:300px"id="money">
+		 &nbsp<b>Joules</b>: <span id="money_value"></span><br>
 		
 		
-		Joules/Per Second: <span id="perSecond"></span><br>
-		Joules/Per Click: <span id="perClick"></span>
+	     &nbsp<b>Joules/Per Second:</b> <span id="perSecond"></span><br>
+		 &nbsp<b>Joules/Per Click:</b> <span id="perClick"></span>
 		</div><br>
-		<div onclick='game.addClickerText("+"+game.getPointsPerClick())' style="text-align:centre;max-width:300px;color:white;background-color:black;cursor:pointer ; user-select: none;
+		<div onclick='game.addClickerText("+"+game.getPointsPerClick())' style="border: 3px double Black;text-align:centre;max-width:300px;color:black;background-color:white;cursor:pointer ; user-select: none;
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
@@ -309,19 +319,19 @@
 		<br>
 		
 		
-		<div  style="border:1px solid Black;max-width:300px"id="credits">
-		IncrementallyDone &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
+		<div  style="border:3px double Black;max-width:300px"id="credits">
+		&nbspIncrementallyDone &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/u/incrementallydone">Reddit</a>
 		<br>
 	
-		InvincibleSpeed &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/user/invinciblespeed">Reddit</a><br>
-		Tombrittain &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey"href="http://www.reddit.com/user/tombrittain:">Reddit</a>
+		&nbspInvincibleSpeed &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey" href="http://www.reddit.com/user/invinciblespeed">Reddit</a><br>
+		&nbspTombrittain &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a style="color:grey"href="http://www.reddit.com/user/tombrittain:">Reddit</a>
 		</div>
 		<br>
 		
 		
 		<br>
 		<br>
-		
+		</div>
 	
 	</body>
 	
