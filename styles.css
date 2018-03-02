@@ -1,0 +1,64 @@
+html {
+  text-align: center;
+}
+
+body {
+  padding: -10px;
+  font-family: default;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  cursor: default;
+}
+
+#container {
+  border: 3px double Black;
+  max-width: 304px;
+  max-height: 610px;
+  margin: auto;
+}
+
+#container>header {
+  text-align: center;
+  max-width: 300px;
+}
+
+#container img {
+  padding: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+#con2 {
+  text-align: left;
+}
+
+#available_houses {
+  background-image: none;
+  cursor: pointer;
+  max-width: 300px;
+  max-height: 350px;
+  overflow: auto;
+  border: 3px double Black;
+}
+
+#money {
+  border: 3px double Black;
+  max-width: 300px;
+}
+
+#clicker {
+  border: 3px double Grey;
+  text-align: center;
+  max-width: 300px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
